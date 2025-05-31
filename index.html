@@ -1,538 +1,648 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prathikkshaa - AI Grad. MBA Brain. HR Soul.</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Prathikkshaa - AI Grad. MBA Brain. HR Soul.</title>
+       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+       <style>
+           * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+           }
 
-        body {
-            font-family: 'JetBrains Mono', monospace;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-            position: relative;
-        }
+           body {
+               font-family: 'JetBrains Mono', monospace;
+               background: #000;
+               color: #fff;
+               overflow-x: hidden;
+               position: relative;
+           }
 
-        /* Animated Star Background */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+           /* Animated Star Background */
+           .stars {
+               position: fixed;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               pointer-events: none;
+               z-index: -1;
+           }
 
-        .star {
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
+           .star {
+               position: absolute;
+               background: #fff;
+               border-radius: 50%;
+               animation: twinkle 3s infinite;
+           }
 
-        .star:nth-child(odd) {
-            animation-delay: 1.5s;
-        }
+           .star:nth-child(odd) {
+               animation-delay: 1.5s;
+           }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
+           @keyframes twinkle {
+               0%, 100% { opacity: 0.3; transform: scale(1); }
+               50% { opacity: 1; transform: scale(1.2); }
+           }
 
-        @keyframes moveStars {
-            0% { transform: translateX(-100vw); }
-            100% { transform: translateX(100vw); }
-        }
+           @keyframes moveStars {
+               0% { transform: translateX(-100vw); }
+               100% { transform: translateX(100vw); }
+           }
 
-        .moving-star {
-            animation: moveStars 15s linear infinite;
-        }
+           .moving-star {
+               animation: moveStars 15s linear infinite;
+           }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+           /* Hero Section */
+           .hero {
+               min-height: 100vh;
+               display: flex;
+               align-items: center;
+               padding: 2rem;
+               max-width: 1200px;
+               margin: 0 auto;
+           }
 
-        .hero-content {
-            flex: 1;
-            padding-right: 2rem;
-        }
+           .hero-content {
+               flex: 1;
+               padding-right: 2rem;
+           }
 
-        .hero-image {
-            flex: 0 0 300px;
-            text-align: center;
-        }
+           .hero-image {
+               flex: 0 0 300px;
+               text-align: center;
+           }
 
-        .name {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
+           .name {
+               font-size: 4rem;
+               font-weight: 700;
+               color: #fff;
+               margin-bottom: 1rem;
+               transition: all 0.3s ease;
+           }
 
-        .name:hover {
-            background: linear-gradient(45deg, #00bfff, #1e90ff, #4169e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
-        }
+           .name:hover {
+               background: linear-gradient(45deg, #00bfff, #1e90ff, #4169e1);
+               -webkit-background-clip: text;
+               -webkit-text-fill-color: transparent;
+               background-clip: text;
+               text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+           }
 
-        .tagline {
-            font-size: 1.3rem;
-            color: #00bfff;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
+           .tagline {
+               font-size: 1.3rem;
+               color: #00bfff;
+               margin-bottom: 2rem;
+               font-weight: 400;
+           }
 
-        .about-text {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #ccc;
-            margin-bottom: 2.5rem;
-        }
+           .about-text {
+               font-size: 1rem;
+               line-height: 1.6;
+               color: #ccc;
+               margin-bottom: 2.5rem;
+           }
 
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 3px solid #00bfff;
-            animation: float 3s ease-in-out infinite;
-            background: linear-gradient(135deg, #0a1a2b, #112d4e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
+           .profile-img {
+               width: 250px;
+               height: 250px;
+               border-radius: 50%;
+               border: 3px solid #00bfff;
+               animation: float 3s ease-in-out infinite;
+               background: linear-gradient(135deg, #0a1a2b, #112d4e);
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               position: relative;
+               overflow: hidden;
+           }
 
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+           .profile-img img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               border-radius: 50%;
+           }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
+           @keyframes float {
+               0%, 100% { transform: translateY(0px); }
+               50% { transform: translateY(-20px); }
+           }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+           .hero-buttons {
+               display: flex;
+               gap: 1rem;
+               flex-wrap: wrap;
+           }
 
-        .btn {
-            padding: 12px 24px;
-            background: linear-gradient(45deg, #1e90ff, #00bfff);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            position: relative;
-            overflow: hidden;
-        }
+           .btn {
+               padding: 12px 24px;
+               background: linear-gradient(45deg, #1e90ff, #00bfff);
+               color: #fff;
+               text-decoration: none;
+               border-radius: 8px;
+               font-weight: 600;
+               transition: all 0.3s ease;
+               border: none;
+               cursor: pointer;
+               font-family: inherit;
+               position: relative;
+               overflow: hidden;
+           }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
+           .btn::before {
+               content: '';
+               position: absolute;
+               top: 0;
+               left: -100%;
+               width: 100%;
+               height: 100%;
+               background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+               transition: left 0.5s;
+           }
 
-        .btn:hover::before {
-            left: 100%;
-        }
+           .btn:hover::before {
+               left: 100%;
+           }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 191, 255, 0.4);
-        }
+           .btn:hover {
+               transform: translateY(-2px);
+               box-shadow: 0 10px 25px rgba(0, 191, 255, 0.4);
+           }
 
-        /* Projects Section */
-        .projects {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+           /* Projects Section */
+           .projects {
+               padding: 4rem 2rem;
+               max-width: 1200px;
+               margin: 0 auto;
+           }
 
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #fff;
-        }
+           .section-title {
+               font-size: 2.5rem;
+               text-align: center;
+               margin-bottom: 3rem;
+               color: #fff;
+           }
 
-        .project-category {
-            margin-bottom: 3rem;
-        }
+           .project-category {
+               margin-bottom: 3rem;
+           }
 
-        .category-title {
-            font-size: 1.5rem;
-            color: #00bfff;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+           .category-title {
+               font-size: 1.5rem;
+               color: #00bfff;
+               margin-bottom: 1.5rem;
+               display: flex;
+               align-items: center;
+               gap: 0.5rem;
+           }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-        }
+           .project-grid {
+               display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+               gap: 1.5rem;
+           }
 
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 191, 255, 0.2);
-        }
+           .project-card {
+               background: rgba(255, 255, 255, 0.05);
+               border-radius: 12px;
+               padding: 1.5rem;
+               transition: all 0.3s ease;
+               border: 1px solid rgba(0, 191, 255, 0.2);
+           }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 191, 255, 0.2);
-            border-color: #00bfff;
-        }
+           .project-card:hover {
+               transform: translateY(-5px);
+               box-shadow: 0 15px 30px rgba(0, 191, 255, 0.2);
+               border-color: #00bfff;
+           }
 
-        .project-title {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
+           .project-title {
+               font-size: 1.2rem;
+               color: #fff;
+               margin-bottom: 0.5rem;
+               font-weight: 600;
+           }
 
-        .project-brief {
-            color: #ccc;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
+           .project-brief {
+               color: #ccc;
+               margin-bottom: 1rem;
+               line-height: 1.5;
+           }
 
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
+           .project-tags {
+               display: flex;
+               flex-wrap: wrap;
+               gap: 0.5rem;
+               margin-bottom: 1rem;
+           }
 
-        .project-tag {
-            background: rgba(255, 105, 180, 0.2);
-            color: #ff69b4;
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(255, 105, 180, 0.3);
-        }
+           .project-tag {
+               background: rgba(255, 105, 180, 0.2);
+               color: #ff69b4;
+               padding: 0.25rem 0.5rem;
+               border-radius: 12px;
+               font-size: 0.8rem;
+               border: 1px solid rgba(255, 105, 180, 0.3);
+           }
 
-        .project-link {
-            color: #00bfff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
+           .project-link {
+               color: #00bfff;
+               text-decoration: none;
+               font-weight: 600;
+               transition: all 0.3s ease;
+           }
 
-        .project-link:hover {
-            color: #1e90ff;
-            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-        }
+           .project-link:hover {
+               color: #1e90ff;
+               text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+           }
 
-        /* Scribblings Section */
-        .scribblings {
-            text-align: center;
-            padding: 3rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+           /* Scribblings Section */
+           .scribblings {
+               text-align: center;
+               padding: 3rem 2rem;
+               max-width: 800px;
+               margin: 0 auto;
+           }
 
-        .scribblings-btn {
-            font-size: 1.1rem;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #4169e1, #00bfff);
-        }
+           .scribblings-btn {
+               font-size: 1.1rem;
+               padding: 15px 30px;
+               background: linear-gradient(45deg, #4169e1, #00bfff);
+           }
 
-        /* Footer */
-        .footer {
-            padding: 4rem 2rem 2rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+           /* Footer */
+           .footer {
+               padding: 4rem 2rem 2rem;
+               text-align: center;
+               max-width: 800px;
+               margin: 0 auto;
+           }
 
-        .footer-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #fff;
-        }
+           .footer-title {
+               font-size: 1.5rem;
+               margin-bottom: 2rem;
+               color: #fff;
+           }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+           .social-icons {
+               display: flex;
+               justify-content: center;
+               gap: 2rem;
+               margin-bottom: 2rem;
+           }
 
-        .social-icon {
-            font-size: 2rem;
-            color: #00bfff;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
+           .social-icon {
+               font-size: 2rem;
+               color: #00bfff;
+               transition: all 0.3s ease;
+               text-decoration: none;
+           }
 
-        .social-icon:hover {
-            color: #ff69b4;
-            transform: translateY(-5px) scale(1.1);
-            text-shadow: 0 0 20px currentColor;
-        }
+           .social-icon:hover {
+               color: #ff69b4;
+               transform: translateY(-5px) scale(1.1);
+               text-shadow: 0 0 20px currentColor;
+           }
 
-        .footer-text {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 2rem;
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-        }
+           .footer-text {
+               color: #666;
+               font-size: 0.9rem;
+               margin-top: 2rem;
+               border-top: 1px solid #333;
+               padding-top: 1rem;
+           }
 
-        /* Typewriter Animation - Fixed timing */
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid #00bfff;
-            white-space: nowrap;
-            animation: typewriter 2s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
+           /* Typewriter Animation - Fixed timing */
+           .typewriter {
+               overflow: hidden;
+               border-right: 3px solid #00bfff;
+               white-space: nowrap;
+               animation: typewriter 2s steps(40, end), blink-caret 0.75s step-end infinite;
+           }
 
-        .typewriter-tagline {
-            overflow: hidden;
-            border-right: 3px solid #00bfff;
-            white-space: nowrap;
-            animation: typewriter-tagline 3s steps(80, end) 0.5s both, blink-caret 0.75s step-end infinite 0.5s;
-            opacity: 0;
-        }
+           .typewriter-tagline {
+               overflow: hidden;
+               border-right: 3px solid #00bfff;
+               white-space: nowrap;
+               animation: typewriter-tagline 3s steps(80, end) 0.5s both, blink-caret 0.75s step-end infinite 0.5s;
+               opacity: 0;
+           }
 
-        @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
-        }
+           @keyframes typewriter {
+               from { width: 0; }
+               to { width: 100%; }
+           }
 
-        @keyframes typewriter-tagline {
-            from { width: 0; opacity: 1; }
-            to { width: 100%; opacity: 1; }
-        }
+           @keyframes typewriter-tagline {
+               from { width: 0; opacity: 1; }
+               to { width: 100%; opacity: 1; }
+           }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #00bfff; }
-        }
+           @keyframes blink-caret {
+               from, to { border-color: transparent; }
+               50% { border-color: #00bfff; }
+           }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 1rem;
-            }
+           /* Responsive Design */
+           @media (max-width: 768px) {
+               .hero {
+                   flex-direction: column;
+                   text-align: center;
+                   padding: 1rem;
+               }
 
-            .hero-content {
-                padding-right: 0;
-                margin-bottom: 2rem;
-            }
+               .hero-content {
+                   padding-right: 0;
+                   margin-bottom: 2rem;
+               }
 
-            .name {
-                font-size: 2.5rem;
-            }
+               .name {
+                   font-size: 2.5rem;
+               }
 
-            .tagline {
-                font-size: 1.1rem;
-            }
+               .tagline {
+                   font-size: 1.1rem;
+               }
 
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
+               .project-grid {
+                   grid-template-columns: 1fr;
+               }
 
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
+               .profile-img {
+                   width: 200px;
+                   height: 200px;
+               }
 
-            .social-icons {
-                gap: 1.5rem;
-            }
-        }
+               .social-icons {
+                   gap: 1.5rem;
+               }
+           }
 
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+           /* Smooth Scrolling */
+           html {
+               scroll-behavior: smooth;
+           }
 
-        /* Section Spacing */
-        section {
-            padding: 2rem 0;
-        }
-    </style>
-</head>
-<body>
-    <!-- Animated Stars Background -->
-    <div class="stars" id="stars"></div>
+           /* Section Spacing */
+           section {
+               padding: 2rem 0;
+           }
+       </style>
+   </head>
+   <body>
+       <!-- Animated Stars Background -->
+       <div class="stars" id="stars"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="name typewriter">Prathikkshaa</h1>
-            <p class="tagline typewriter-tagline">AI Grad. MBA Brain. HR Soul. I'm the Algorithm with Emotional Intelligence.</p>
-            <div class="about-text">
-                I'm Prathikkshaa — an engineer by training, an MBA by choice, and a problem-solver by instinct. My work lives at the intersection of systems and stories: understanding how things work, why people behave the way they do, and where data can quietly push both toward better outcomes.<br><br>
-                I've built dashboards that speak for themselves, led teams that taught me as much as I guided them, and taken on projects that sit somewhere between structured analysis and creative insight.<br><br>
-                Right now, I'm exploring spaces where people, data, and decisions meet—learning fast, asking better questions, and building things that matter.
-            </div>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">Check Out the Things I've Built →</a>
-                <a href="#footer" class="btn">Let's Connect →</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="profile-img">
-                <img src="https://raw.githubusercontent.com/Prathikkshaa/portfolio-assets/main/ChatGPT%20Image%20May%2030%2C%202025%2C%2008_38_33%20PM.png" alt="Prathikkshaa Profile Image">
-            </div>
-        </div>
-    </section>
+       <!-- Hero Section -->
+       <section class="hero">
+           <div class="hero-content">
+               <h1 class="name typewriter">Prathikkshaa</h1>
+               <p class="tagline typewriter-tagline">AI Grad. MBA Brain. HR Soul. I'm the Algorithm with Emotional Intelligence.</p>
+               <div class="about-text">
+                   I'm Prathikkshaa — an engineer by training, an MBA by choice, and a problem-solver by instinct. My work lives at the intersection of systems and stories: understanding how things work, why people behave the way they do, and where data can quietly push both toward better outcomes.<br><br>
+                   I've built dashboards that speak for themselves, led teams that taught me as much as I guided them, and taken on projects that sit somewhere between structured analysis and creative insight.<br><br>
+                   Right now, I'm exploring spaces where people, data, and decisions meet—learning fast, asking better questions, and building things that matter.
+               </div>
+               <div class="hero-buttons">
+                   <a href="#projects" class="btn">Check Out the Things I've Built →</a>
+                   <a href="#footer" class="btn">Let's Connect →</a>
+               </div>
+           </div>
+           <div class="hero-image">
+               <div class="profile-img">
+                   <img src="https://raw.githubusercontent.com/Prathikkshaa/portfolio-assets/main/ChatGPT%20Image%20May%2030%2C%202025%2C%2008_38_33%20PM.png" alt="Prathikkshaa Profile Image">
+               </div>
+           </div>
+       </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2 class="section-title">The Things I've Built</h2>
-        
-        <!-- Data Analytics & Visualization -->
-        <div class="project-category">
-            <h3 class="category-title">🔍 Data Analytics & Visualization</h3>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4 class="project-title">E-Commerce Order Data Analysis</h4>
-                    <p class="project-brief">Analyzed multi-platform e-commerce order data to identify patterns in order fulfillment, customer feedback, delivery delays, and refund requests.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">🐍 Python</span>
-                        <span class="project-tag">🐼 Pandas</span>
-                        <span class="project-tag">📊 Matplotlib</span>
-                        <span class="project-tag">🌊 Seaborn</span>
-                        <span class="project-tag">🔍 EDA</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/E-Commerce-Order-Data-Analysis" class="project-link">GitHub Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4 class="project-title">Spotify Global Streaming Data 2024</h4>
-                    <p class="project-brief">Dissected global listener behavior on Spotify, tracking artist popularity, genre preferences, and streaming trends in 2024.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">🐍 Python</span>
-                        <span class="project-tag">🎵 Spotify API</span>
-                        <span class="project-tag">🐼 Pandas</span>
-                        <span class="project-tag">📈 Visualization</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/Spotify-Global-Streaming-Data-2024" class="project-link">GitHub Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4 class="project-title">HR Analytics Dashboard</h4>
-                    <p class="project-brief">Built a Tableau dashboard visualizing key HR metrics like employee satisfaction, performance, and engagement using real-world HR datasets.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">📊 Tableau</span>
-                        <span class="project-tag">📑 Excel</span>
-                        <span class="project-tag">👥 HR Metrics</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/HR-Analytics-Dashboard" class="project-link">GitHub Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4 class="project-title">Electoral Bonds Analysis</h4>
-                    <p class="project-brief">Investigated electoral bond transaction patterns to reveal political funding flows. Included data preprocessing, time-series visualization, and stakeholder mapping.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">🐍 Python</span>
-                        <span class="project-tag">🐼 Pandas</span>
-                        <span class="project-tag">📊 Matplotlib</span>
-                        <span class="project-tag">🌊 Seaborn</span>
-                        <span class="project-tag">📈 Plotly</span>
-                        <span class="project-tag">📓 Jupyter Notebook</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/Electoral-Bonds-Analysis-Unveiling-the-Flow-of-Influence-and-Funds-" class="project-link">GitHub Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4 class="project-title">Restaurant Industry Analysis</h4>
-                    <p class="project-brief">Comprehensive analysis of restaurant industry data focusing on cuisine trends, pricing behavior, and delivery insights using Python, SQL, and Tableau.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">🐍 Python</span>
-                        <span class="project-tag">🗄️ SQL</span>
-                        <span class="project-tag">📊 Tableau</span>
-                        <span class="project-tag">🌍 Geo Analysis</span>
-                        <span class="project-tag">🔍 EDA</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/Comprehensive-Restaurant-Industry-Analysis-with-Python-SQL-and-Tableau" class="project-link">GitHub Project →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Machine Learning Projects -->
-        <div class="project-category">
-            <h3 class="category-title">🤖 Machine Learning Projects</h3>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4 class="project-title">Amazon Kindle Sentiment Analysis</h4>
-                    <p class="project-brief">Analyzed 12,000+ Kindle reviews using NLP (lemmatization, BoW, TF-IDF) to predict customer sentiment from review text.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">🐍 Python</span>
-                        <span class="project-tag">🔤 NLP</span>
-                        <span class="project-tag">🧠 Scikit-learn</span>
-                        <span class="project-tag">📜 BoW</span>
-                        <span class="project-tag">📊 TF-IDF</span>
-                        <span class="project-tag">✂️ Lemmatization</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/Unveiling-Emotions-Sentiment-Analysis-on-Amazon-Kindle-Book-Reviews" class="project-link">GitHub Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4 class="project-title">Iris Dataset Clustering</h4>
-                    <p class="project-brief">Clustered Iris dataset using KMeans after comprehensive EDA. Visualized clusters and evaluated optimal cluster count using Elbow method.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">🐍 Python</span>
-                        <span class="project-tag">🔍 KMeans</span>
-                        <span class="project-tag">🌊 Seaborn</span>
-                        <span class="project-tag">📊 Matplotlib</span>
-                        <span class="project-tag">🔍 EDA</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/Unveiling-Patterns-Advanced-Clustering-Analysis-on-the-Iris-Dataset" class="project-link">GitHub Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4 class="project-title">OCR with MNIST Dataset</h4>
-                    <p class="project-brief">Implemented character recognition using convolutional neural networks trained on MNIST. Used TensorFlow for model design and training.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">🐍 Python</span>
-                        <span class="project-tag">🧠 TensorFlow</span>
-                        <span class="project-tag">👁️ OCR</span>
-                        <span class="project-tag">🔢 CNN</span>
-                    </div>
-                    <a href="https://github.com/Prathikkshaa/OCR-Implementation-using-the-MNIST" class="project-link">GitHub Project →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Software Development -->
-        <div class="project-category">
+       <!-- Projects Section -->
+       <section id="projects" class="projects">
+           <h2 class="section-title">The Things I've Built</h2>
            
+           <!-- Data Analytics & Visualization -->
+           <div class="project-category">
+               <h3 class="category-title">🔍 Data Analytics & Visualization</h3>
+               <div class="project-grid">
+                   <div class="project-card">
+                       <h4 class="project-title">E-Commerce Order Data Analysis</h4>
+                       <p class="project-brief">Analyzed multi-platform e-commerce order data to identify patterns in order fulfillment, customer feedback, delivery delays, and refund requests.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🐼 Pandas</span>
+                           <span class="project-tag">📊 Matplotlib</span>
+                           <span class="project-tag">🌊 Seaborn</span>
+                           <span class="project-tag">🔍 EDA</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/E-Commerce-Order-Data-Analysis" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">Spotify Global Streaming Data 2024</h4>
+                       <p class="project-brief">Dissected global listener behavior on Spotify, tracking artist popularity, genre preferences, and streaming trends in 2024.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🎵 Spotify API</span>
+                           <span class="project-tag">🐼 Pandas</span>
+                           <span class="project-tag">📈 Visualization</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Spotify-Global-Streaming-Data-2024" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">HR Analytics Dashboard</h4>
+                       <p class="project-brief">Built a Tableau dashboard visualizing key HR metrics like employee satisfaction, performance, and engagement using real-world HR datasets.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">📊 Tableau</span>
+                           <span class="project-tag">📑 Excel</span>
+                           <span class="project-tag">👥 HR Metrics</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/HR-Analytics-Dashboard" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">Electoral Bonds Analysis</h4>
+                       <p class="project-brief">Investigated electoral bond transaction patterns to reveal political funding flows. Included data preprocessing, time-series visualization, and stakeholder mapping.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🐼 Pandas</span>
+                           <span class="project-tag">📊 Matplotlib</span>
+                           <span class="project-tag">🌊 Seaborn</span>
+                           <span class="project-tag">📈 Plotly</span>
+                           <span class="project-tag">📓 Jupyter Notebook</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Electoral-Bonds-Analysis-Unveiling-the-Flow-of-Influence-and-Funds-" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">Restaurant Industry Analysis</h4>
+                       <p class="project-brief">Comprehensive analysis of restaurant industry data focusing on cuisine trends, pricing behavior, and delivery insights using Python, SQL, and Tableau.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🗄️ SQL</span>
+                           <span class="project-tag">📊 Tableau</span>
+                           <span class="project-tag">🌍 Geo Analysis</span>
+                           <span class="project-tag">🔍 EDA</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Comprehensive-Restaurant-Industry-Analysis-with-Python-SQL-and-Tableau" class="project-link">GitHub Project →</a>
+                   </div>
+               </div>
+           </div>
+
+           <!-- Machine Learning Projects -->
+           <div class="project-category">
+               <h3 class="category-title">🤖 Machine Learning Projects</h3>
+               <div class="project-grid">
+                   <div class="project-card">
+                       <h4 class="project-title">Amazon Kindle Sentiment Analysis</h4>
+                       <p class="project-brief">Analyzed 12,000+ Kindle reviews using NLP (lemmatization, BoW, TF-IDF) to predict customer sentiment from review text.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🔤 NLP</span>
+                           <span class="project-tag">🧠 Scikit-learn</span>
+                           <span class="project-tag">📜 BoW</span>
+                           <span class="project-tag">📊 TF-IDF</span>
+                           <span class="project-tag">✂️ Lemmatization</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Unveiling-Emotions-Sentiment-Analysis-on-Amazon-Kindle-Book-Reviews" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">Iris Dataset Clustering</h4>
+                       <p class="project-brief">Clustered Iris dataset using KMeans after comprehensive EDA. Visualized clusters and evaluated optimal cluster count using Elbow method.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🔍 KMeans</span>
+                           <span class="project-tag">🌊 Seaborn</span>
+                           <span class="project-tag">📊 Matplotlib</span>
+                           <span class="project-tag">🔍 EDA</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Unveiling-Patterns-Advanced-Clustering-Analysis-on-the-Iris-Dataset" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">OCR with MNIST Dataset</h4>
+                       <p class="project-brief">Implemented character recognition using convolutional neural networks trained on MNIST. Used TensorFlow for model design and training.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🧠 TensorFlow</span>
+                           <span class="project-tag">👁️ OCR</span>
+                           <span class="project-tag">🔢 CNN</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/OCR-Implementation-using-the-MNIST" class="project-link">GitHub Project →</a>
+                   </div>
+               </div>
+           </div>
+
+           <!-- Software Development -->
+           <div class="project-category">
+               <h3 class="category-title">🛠️ Software Development</h3>
+               <div class="project-grid">
+                   <div class="project-card">
+                       <h4 class="project-title">Bus Ticket Reservation System</h4>
+                       <p class="project-brief">GUI-based ticket reservation system with features to book/cancel bus seats and view real-time seat availability.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🖼️ Tkinter</span>
+                           <span class="project-tag">🚌 GUI Programming</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Ticketing" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">Employee Payroll Management</h4>
+                       <p class="project-brief">EPMS tool automating payroll calculations and employee record handling with user-friendly Python interface.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">💰 Payroll System</span>
+                           <span class="project-tag">🖼️ UI Logic</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Salary-calci" class="project-link">GitHub Project →</a>
+                   </div>
+                   <div class="project-card">
+                       <h4 class="project-title">Thara - The MunchBot</h4>
+                       <p class="project-brief">A recipe recommendation chatbot that performs ingredient-to-recipe and recipe-to-ingredient matching using NLTK-based NLP.</p>
+                       <div class="project-tags">
+                           <span class="project-tag">🐍 Python</span>
+                           <span class="project-tag">🔤 NLTK</span>
+                           <span class="project-tag">🤖 Chatbot</span>
+                           <span class="project-tag">🍳 Recipe AI</span>
+                       </div>
+                       <a href="https://github.com/Prathikkshaa/Thara-The-MunchBot" class="project-link">GitHub Project →</a>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- Scribblings Section -->
+       <section class="scribblings">
+           <a href="https://medium.com/@Prathikkshaa" class="btn scribblings-btn">Click here to explore my articles →</a>
+       </section>
+
+       <!-- Footer -->
+       <section id="footer" class="footer">
+           <h3 class="footer-title">Got something cool to build, rant about time & space, or explore wild ideas? Let's connect.</h3>
+           <div class="social-icons">
+               <a href="https://www.linkedin.com/in/prathikkshaapr/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+               <a href="https://github.com/Prathikkshaa?tab=repositories" class="social-icon"><i class="fab fa-github"></i></a>
+               <a href="https://medium.com/@Prathikkshaa" class="social-icon"><i class="fab fa-medium"></i></a>
+           </div>
+           <p class="footer-text">© Prathikkshaa — Designed with caffeine, overthinking, existential crisis & a curious mind</p>
+       </section>
+
+       <script>
+           // Create animated stars
+           function createStars() {
+               const starsContainer = document.getElementById('stars');
+               const starCount = 100;
+               
+               for (let i = 0; i < starCount; i++) {
+                   const star = document.createElement('div');
+                   star.className = 'star';
+                   star.style.left = Math.random() * 100 + '%';
+                   star.style.top = Math.random() * 100 + '%';
+                   star.style.width = star.style.height = Math.random() * 3 + 1 + 'px';
+                   star.style.animationDelay = Math.random() * 3 + 's';
+                   starsContainer.appendChild(star);
+               }
+
+               // Create moving stars
+               for (let i = 0; i < 20; i++) {
+                   const star = document.createElement('div');
+                   star.className = 'star moving-star';
+                   star.style.top = Math.random() * 100 + '%';
+                   star.style.left = '-5px';
+                   star.style.width = star.style.height = Math.random() * 2 + 1 + 'px';
+                   star.style.animationDelay = Math.random() * 15 + 's';
+                   starsContainer.appendChild(star);
+               }
+           }
+
+           // Initialize stars when page loads
+           window.addEventListener('load', createStars);
+
+           // Smooth scrolling for navigation links
+           document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+               anchor.addEventListener('click', function (e) {
+                   e.preventDefault();
+                   const target = document.querySelector(this.getAttribute('href'));
+                   if (target) {
+                       target.scrollIntoView({
+                           behavior: 'smooth',
+                           block: 'start'
+                       });
+                   }
+               });
+           });
+
+           // Add some interactive effects
+           document.querySelectorAll('.project-card').forEach(card => {
+               card.addEventListener('mouseenter', function() {
+                   this.style.background = 'rgba(0, 191, 255, 0.1)';
+               });
+               
+               card.addEventListener('mouseleave', function() {
+                   this.style.background = 'rgba(255, 255, 255, 0.05)';
+               });
+           });
+       </script>
+   </body>
+   </html>
